@@ -1,74 +1,22 @@
 [
-    {
-        "id": 1,
-        "name": "Wireless Headphones",
-        "category": "Electronics",
-        "price": 50,
-        "stock": 15,
-        "description": "High-quality sound, Bluetooth 5.0, 20 hours of battery life.",
-        "image": "images\/items\/1.jpg"
-    },
-    {
-        "id": 2,
-        "name": "Smartwatch",
-        "category": "Electronics",
-        "price": 89,
-        "image": "images\/items\/2.jpg",
-        "description": "Fitness tracker, heart rate monitor, and water-resistant design.",
-        "stock": 10
-    },
-    {
-        "id": 3,
-        "name": "Urban Backpack",
-        "category": "Accessories",
-        "price": 35,
-        "image": "images\/items\/3.jpg",
-        "description": "Spacious backpack for laptops up to 15 inches.",
-        "stock": 20
-    },
-    {
-        "id": 4,
-        "name": "Sports Sneakers",
-        "category": "Clothing",
-        "price": 60,
-        "image": "images\/items\/4.jpg",
-        "description": "Lightweight and comfortable running sneakers.",
-        "stock": 25
-    },
-    {
-        "id": 5,
-        "name": "Coffee Machine",
-        "category": "Home Appliances",
-        "price": 120,
-        "image": "images\/items\/5.jpg",
-        "description": "Automatic coffee machine with a milk frother.",
-        "stock": 8
-    },
-    {
-        "id": 6,
-        "name": "Desk Lamp",
-        "category": "Home Appliances",
-        "price": 25,
-        "image": "images\/items\/6.jpg",
-        "description": "LED lamp with adjustable brightness.",
-        "stock": 30
-    },
-    {
-        "id": 7,
-        "name": "Cotton T-Shirt",
-        "category": "Clothing",
-        "price": 15,
-        "image": "images\/items\/7.jpg",
-        "description": "100% cotton, available in different sizes.",
-        "stock": 50
-    },
-    {
-        "id": 8,
-        "name": "Portable Speaker",
-        "category": "Electronics",
-        "price": 40,
-        "image": "images\/items\/8.jpg",
-        "description": "Bluetooth speaker with powerful bass.",
-        "stock": 18
-    }
+  {"id":1,  "name":"Wireless Noise-Cancelling Headphones", "category":"Electronics",    "price":89.99,  "stock":25, "rating":4.7, "description":"Premium over-ear wireless headphones with active noise cancellation, 35-hour battery life and comfortable memory-foam ear cushions for all-day listening.", "image":"images/items/1.jpg"},
+  {"id":2,  "name":"Smart Fitness Watch",                   "category":"Electronics",    "price":129.00, "stock":18, "rating":4.5, "description":"Track workouts, heart rate and sleep. Water resistant to 50 m, vibrant AMOLED display, 7-day battery life and customizable watch faces.", "image":"images/items/2.jpg"},
+  {"id":3,  "name":"Portable Bluetooth Speaker",            "category":"Electronics",    "price":49.50,  "stock":40, "rating":4.3, "description":"Compact 360-degree speaker with deep bass, IPX7 waterproof rating and 12 hours of playback per charge. Perfect for travel and outdoors.", "image":"images/items/3.jpg"},
+  {"id":4,  "name":"Mechanical RGB Keyboard",               "category":"Electronics",    "price":75.00,  "stock":15, "rating":4.6, "description":"Full-size mechanical keyboard with tactile switches, per-key RGB backlighting, detachable USB-C cable and a durable aluminium frame.", "image":"images/items/4.jpg"},
+  {"id":5,  "name":"Wireless Ergonomic Mouse",              "category":"Electronics",    "price":29.99,  "stock":50, "rating":4.2, "description":"Silent-click ergonomic wireless mouse with adjustable DPI up to 2400, a USB nano receiver and a comfortable shape for long work sessions.", "image":"images/items/5.jpg"},
+  {"id":6,  "name":"Classic Cotton T-Shirt",                "category":"Clothing",       "price":14.99,  "stock":100,"rating":4.4, "description":"Soft 100% ring-spun cotton t-shirt with a regular fit. Pre-shrunk, double-stitched collar and available in several classic colours.", "image":"images/items/6.jpg"},
+  {"id":7,  "name":"Slim-Fit Denim Jeans",                  "category":"Clothing",       "price":45.00,  "stock":35, "rating":4.3, "description":"Mid-rise slim-fit jeans made from premium stretch denim. Features a classic five-pocket design and a zip fly closure.", "image":"images/items/7.jpg"},
+  {"id":8,  "name":"Lightweight Running Sneakers",          "category":"Clothing",       "price":69.90,  "stock":28, "rating":4.6, "description":"Breathable mesh running shoes with a cushioned EVA midsole, flexible rubber outsole and a padded ankle collar for comfort.", "image":"images/items/8.jpg"},
+  {"id":9,  "name":"Fleece Pullover Hoodie",                "category":"Clothing",       "price":39.00,  "stock":45, "rating":4.5, "description":"Heavyweight fleece pullover hoodie with a kangaroo pocket, adjustable drawstring hood and ribbed cuffs/hem for a snug fit.", "image":"images/items/9.jpg"},
+  {"id":10, "name":"Classic Leather-Strap Belt",            "category":"Clothing",       "price":19.99,  "stock":60, "rating":4.1, "description":"Everyday belt with a brushed-metal pin buckle. Adjustable and available in black and brown to match any outfit.", "image":"images/items/10.jpg"},
+  {"id":11, "name":"Everyday Urban Backpack",               "category":"Accessories",    "price":42.00,  "stock":30, "rating":4.8, "description":"Water-resistant city backpack with a padded 15.6-inch laptop compartment, multiple organizer pockets and a side pocket for a bottle.", "image":"images/items/11.jpg"},
+  {"id":12, "name":"Polarized Aviator Sunglasses",          "category":"Accessories",    "price":24.50,  "stock":55, "rating":4.2, "description":"Classic metal-frame sunglasses with UV400 polarized lenses that cut glare. Includes a soft storage pouch and cleaning cloth.", "image":"images/items/12.jpg"},
+  {"id":13, "name":"Slim Bifold Leather Wallet",            "category":"Accessories",    "price":22.00,  "stock":70, "rating":4.4, "description":"Genuine-leather bifold wallet with six card slots, a transparent ID window and two bill compartments. Slim profile that fits any pocket.", "image":"images/items/13.jpg"},
+  {"id":14, "name":"Insulated Water Bottle (750 ml)",       "category":"Accessories",    "price":18.00,  "stock":80, "rating":4.6, "description":"Double-wall vacuum-insulated stainless-steel bottle that keeps drinks cold for 24 hours or hot for 12 hours. Leak-proof screw cap.", "image":"images/items/14.jpg"},
+  {"id":15, "name":"Minimalist Analog Watch",               "category":"Accessories",    "price":59.00,  "stock":20, "rating":4.5, "description":"Stainless-steel case with a genuine leather strap. Japanese quartz movement, 30 m water resistance and a simple clean dial.", "image":"images/items/15.jpg"},
+  {"id":16, "name":"Automatic Espresso Coffee Machine",     "category":"Home & Kitchen", "price":219.00, "stock":10, "rating":4.9, "description":"15-bar pump espresso machine with a built-in milk frother, a removable 1.5-litre water tank and a stainless-steel body.", "image":"images/items/16.jpg"},
+  {"id":17, "name":"Eye-Caring LED Desk Lamp",              "category":"Home & Kitchen", "price":32.00,  "stock":40, "rating":4.3, "description":"Foldable LED desk lamp with three colour modes, stepless brightness control and a built-in USB charging port for your phone.", "image":"images/items/17.jpg"},
+  {"id":18, "name":"Non-Stick Cookware Set (7 pieces)",     "category":"Home & Kitchen", "price":89.00,  "stock":15, "rating":4.5, "description":"Seven-piece non-stick cookware set with heat-resistant handles. Compatible with gas, electric, ceramic and induction stovetops.", "image":"images/items/18.jpg"},
+  {"id":19, "name":"Porcelain Dinner Set for 4",            "category":"Home & Kitchen", "price":55.00,  "stock":22, "rating":4.4, "description":"Sixteen-piece porcelain dinner set: four dinner plates, four side plates, four bowls and four mugs. Dishwasher and microwave safe.", "image":"images/items/19.jpg"},
+  {"id":20, "name":"Soy Scented Candle (Vanilla)",          "category":"Home & Kitchen", "price":12.99,  "stock":120,"rating":4.7, "description":"Hand-poured soy-wax candle in a frosted glass jar. Up to 40 hours of burn time with a warm, calming vanilla fragrance.", "image":"images/items/20.jpg"}
 ]

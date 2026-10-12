@@ -1,78 +1,156 @@
-<?php 
-require_once 'includes/functions.php'; 
-$products = loadData('products.json');
-$featuredProducts = array_slice($products, 0, 3);
+<?php
+$pageTitle = 'Home';
+require_once 'includes/functions.php';
 
-include 'includes/header.php'; 
+$products   = loadData('products.json');
+$featured   = array_slice($products, 0, 8);
+$categories = [];
+foreach ($products as $p) {
+    $cat = $p['category'];
+    if (!isset($categories[$cat])) $categories[$cat] = 0;
+    $categories[$cat]++;
+}
+
+// Category display info: short code shown inside a coloured tile (no images required).
+$catMeta = [
+    'Electronics'    => ['code' => 'EL', 'count' => 0],
+    'Clothing'       => ['code' => 'CL', 'count' => 0],
+    'Accessories'    => ['code' => 'AC', 'count' => 0],
+    'Home & Kitchen' => ['code' => 'HK', 'count' => 0],
+];
+foreach ($categories as $name => $c) {
+    if (isset($catMeta[$name])) $catMeta[$name]['count'] = $c;
+}
+
+include 'includes/header.php';
 ?>
 
-<section class="hero" style="padding: 50px 20px;">
-  <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px; text-align: left; padding: 0;">
-    
-    <div style="flex: 1; min-width: 300px;">
-      <h1 style="font-size: 38px; line-height: 1.2; margin-bottom: 15px;">Everything You Need, <br>Delivered to Your Door</h1>
-      <p style="font-size: 18px; opacity: 0.9; margin-bottom: 25px;">Discover thousands of top quality products at unbeatable prices.</p>
-      <a href="catalog.php" class="btn" style="background: white; color: var(--primary); font-weight: bold; padding: 12px 28px; font-size: 16px;">Start Shopping →</a>
+<section class="hero">
+    <div class="hero-inner">
+        <div>
+            <h1>Everything you need,<br>delivered to your door.</h1>
+            <p class="lead">Shop a curated selection of electronics, clothing, accessories and home goods at fair prices, with fast delivery and a simple, secure checkout.</p>
+            <div class="hero-actions">
+                <a href="catalog.php" class="btn btn-white btn-lg">Start Shopping</a>
+                <a href="pages/about.php" class="btn btn-ghost btn-lg">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="hero-stat"><span class="num"><?= count($products) ?>+</span><span class="lbl">Products</span></div>
+            <div class="hero-stat"><span class="num"><?= count($categories) ?></span><span class="lbl">Categories</span></div>
+            <div class="hero-stat"><span class="num">24/7</span><span class="lbl">Support</span></div>
+            <div class="hero-stat"><span class="num">1-3d</span><span class="lbl">Delivery</span></div>
+        </div>
     </div>
+</section>
 
-    <div style="flex: 1; min-width: 300px; text-align: center;">
-      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80" 
-           alt="Shopping Online" 
-           style="width: 100%; max-width: 480px; height: 300px; object-fit: cover; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+<section class="features-strip">
+    <div class="features-strip-inner">
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <div class="feature-txt">
+                <h4>Free Delivery</h4>
+                <p>On all orders over $50</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div class="feature-txt">
+                <h4>Secure Payment</h4>
+                <p>Encrypted checkout</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="feature-txt">
+                <h4>Quality Guarantee</h4>
+                <p>Verified products only</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="feature-txt">
+                <h4>24/7 Support</h4>
+                <p>We reply within hours</p>
+            </div>
+        </div>
     </div>
-
-  </div>
 </section>
 
 <div class="container">
-  <h2 style="text-align: center; margin-bottom: 25px;">Why Choose Us?</h2>
-  <div class="grid">
-    <div class="card" style="text-align: center; padding: 25px;">
-      <div style="font-size: 45px; margin-bottom: 10px;"></div>
-      <h3>Fast Delivery</h3>
-      <p style="color: #6b7280; margin-top: 8px;">Lightning fast doorstep delivery across the whole country.</p>
-    </div>
-    
-    <div class="card" style="text-align: center; padding: 25px;">
-      <div style="font-size: 45px; margin-bottom: 10px;"></div>
-      <h3>Secure Payment</h3>
-      <p style="color: #6b7280; margin-top: 8px;">100% secure checkout with various payment methods.</p>
-    </div>
-    
-    <div class="card" style="text-align: center; padding: 25px;">
-      <div style="font-size: 45px; margin-bottom: 10px;"></div>
-      <h3>Certified Quality</h3>
-      <p style="color: #6b7280; margin-top: 8px;">Only verified vendors and authentic premium products.</p>
-    </div>
-  </div>
 
-  <?php if (!empty($featuredProducts)): ?>
-    <div style="margin-top: 60px;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-        <h2>Popular Products</h2>
-        <a href="catalog.php" style="color: var(--primary); text-decoration: none; font-weight: bold;">View All →</a>
-      </div>
+    <?php if (isLoggedIn()): ?>
+        <div class="alert alert-info">
+            Welcome back, <strong><?= e($_SESSION['user']['first_name']) ?></strong>. Continue exploring our catalog.
+        </div>
+    <?php endif; ?>
 
-      <div class="grid">
-        <?php foreach ($featuredProducts as $p): ?>
-          <div class="card">
-            <?php if (!empty($p['image'])): ?>
-              <img src="<?= htmlspecialchars($p['image']) ?>" alt="<?= htmlspecialchars($p['name']) ?>">
-            <?php else: ?>
-              <div class="no-image">No Image</div>
-            <?php endif; ?>
-            <div class="card-body">
-              <h3><?= htmlspecialchars($p['name']) ?></h3>
-              <p style="color: #6b7280;"><?= $p['category'] ?></p>
-              <div class="price">$<?= $p['price'] ?></div>
-              <a href="product.php?id=<?= $p['id'] ?>" class="btn" style="width: 100%; text-align: center;">View Details</a>
-            </div>
-          </div>
+    <div class="section-head">
+        <h2>Shop by Category</h2>
+    </div>
+
+    <div class="categories-grid">
+        <?php foreach ($catMeta as $catName => $meta): ?>
+            <?php if ($meta['count'] <= 0) continue; ?>
+            <?php
+                // Inline SVG icons per category (no emoji, no external files)
+                $catIcons = [
+                    'Electronics'    => '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+                    'Clothing'       => '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>',
+                    'Accessories'    => '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>',
+                    'Home & Kitchen' => '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+                ];
+            ?>
+            <a href="catalog.php?category=<?= urlencode($catName) ?>" class="category-card">
+                <div class="cat-shape"><?= $catIcons[$catName] ?? '' ?></div>
+                <h4><?= e($catName) ?></h4>
+                <div class="cat-count"><?= $meta['count'] ?> products</div>
+            </a>
         <?php endforeach; ?>
-      </div>
     </div>
-  <?php endif; ?>
 
+    <div class="section-head">
+        <h2>Featured Products</h2>
+        <a href="catalog.php" class="view-all">View all products &rarr;</a>
+    </div>
+
+    <div class="grid">
+        <?php foreach ($featured as $p): ?>
+            <article class="card">
+                <a href="product.php?id=<?= (int)$p['id'] ?>" class="card-media">
+                    <?php if (!empty($p['image']) && file_exists(__DIR__.'/'.$p['image'])): ?>
+                        <img src="<?= e($p['image']) ?>" alt="<?= e($p['name']) ?>">
+                    <?php else: ?>
+                        <div class="image-placeholder">
+                            <div class="ph-shape"><?= (int)$p['id'] ?></div>
+                            <span>Add photo<br><small><?= e(basename($p['image'])) ?></small></span>
+                        </div>
+                    <?php endif; ?>
+                </a>
+                <div class="card-body">
+                    <span class="cat"><?= e($p['category']) ?></span>
+                    <a href="product.php?id=<?= (int)$p['id'] ?>"><h3><?= e($p['name']) ?></h3></a>
+                    <?= renderStars($p['rating'] ?? 0) ?>
+                    <div class="card-foot">
+                        <div class="price">$<?= number_format($p['price'], 2) ?></div>
+                        <a href="product.php?id=<?= (int)$p['id'] ?>" class="btn btn-sm">View</a>
+                    </div>
+                </div>
+            </article>
+        <?php endforeach; ?>
+    </div>
+
+    <div style="text-align:center; margin-top:40px;">
+        <a href="catalog.php" class="btn btn-lg">Browse All Products</a>
+    </div>
 </div>
 
 <?php include 'includes/footer.php'; ?>

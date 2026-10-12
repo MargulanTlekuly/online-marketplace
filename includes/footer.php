@@ -1,11 +1,47 @@
-<footer>
-  <div>
-    <a href="#">About Us</a> | <a href="#">Contact</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms</a>
-  </div>
-  <div style="margin-top:10px;">
-    <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Telegram</a>
-  </div>
-  <p style="margin-top:10px;">&copy; 2026 Online Marketplace</p>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="<?= isset($basePath) ? $basePath : '' ?>index.php" class="brand brand-footer">
+                    <img src="<?= isset($basePath) ? $basePath : '' ?>images/logo.png" alt="Marketplace" class="brand-logo">
+                </a>
+                <p class="footer-desc" style="margin-top:16px;">Student-built online marketplace offering a curated selection of electronics, clothing, accessories and home goods with simple, secure shopping.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="<?= isset($basePath) ? $basePath : '' ?>index.php">Home</a></li>
+                    <li><a href="<?= isset($basePath) ? $basePath : '' ?>catalog.php">Catalog</a></li>
+                    <li><a href="<?= isset($basePath) ? $basePath : '' ?>pages/about.php">About</a></li>
+                    <li><a href="<?= isset($basePath) ? $basePath : '' ?>pages/contact.php">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="<?= isset($basePath) ? $basePath : '' ?>pages/privacy.php">Privacy Policy</a></li>
+                    <li><a href="<?= isset($basePath) ? $basePath : '' ?>pages/terms.php">Terms of Service</a></li>
+                    <li><a href="<?= isset($basePath) ? $basePath : '' ?>pages/faq.php">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <ul class="social-list">
+                    <li><a href="#">IG</a></li>
+                    <li><a href="#">FB</a></li>
+                    <li><a href="#">TG</a></li>
+                </ul>
+                <p style="margin-top:14px; font-size:12px; color:#64748b;">Social icon images can be placed in <code style="background:#1e293b; padding:2px 6px; border-radius:4px; font-size:11px;">images/icons/</code></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Online Marketplace — Student Web Programming Project.</p>
+        </div>
+    </div>
 </footer>
+
+<!-- NO JAVASCRIPT. All interactivity handled via PHP forms and page reloads. -->
 </body>
 </html>
