@@ -9,7 +9,6 @@ $orders = loadData('orders.json');
 $errors = [];
 $success = '';
 
-// Handle profile update
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_profile'])) {
     $first_name = trim($_POST['first_name'] ?? '');
     $last_name  = trim($_POST['last_name'] ?? '');

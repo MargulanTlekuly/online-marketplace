@@ -11,7 +11,6 @@ foreach ($products as $p) {
     $categories[$cat]++;
 }
 
-// Category display info: short code shown inside a coloured tile (no images required).
 $catMeta = [
     'Electronics'    => ['code' => 'EL', 'count' => 0],
     'Clothing'       => ['code' => 'CL', 'count' => 0],

@@ -8,7 +8,6 @@ $order = null;
 foreach ($orders as $o) { if ((int)$o['id'] === $orderId) { $order = $o; break; } }
 if (!$order) redirectTo('index.php');
 
-// Authorization: only the owner or admin can view
 if (!isLoggedIn() || (!isAdmin() && (int)$_SESSION['user']['id'] !== (int)$order['user_id'])) {
     redirectTo('login.php');
 }

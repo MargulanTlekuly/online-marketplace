@@ -42,6 +42,5 @@
     </div>
 </footer>
 
-<!-- NO JAVASCRIPT. All interactivity handled via PHP forms and page reloads. -->
 </body>
 </html>
