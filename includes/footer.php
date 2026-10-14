@@ -33,7 +33,6 @@
                     <li><a href="#">FB</a></li>
                     <li><a href="#">TG</a></li>
                 </ul>
-                <p style="margin-top:14px; font-size:12px; color:#64748b;">Social icon images can be placed in <code style="background:#1e293b; padding:2px 6px; border-radius:4px; font-size:11px;">images/icons/</code></p>
             </div>
         </div>
         <div class="footer-bottom">
